@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/public/pdf/css/style.css">
+    <title>Test Report</title>
+</head>
+<body>
+    <div id="invoice">
+
+        <div class="toolbar hidden-print">
+            <div class="text-right">
+                <button id="printInvoice" class="btn btn-info"><i class="fa fa-print"></i> Print Report</button>
+                <!-- <button class="btn btn-info"><i class="fa fa-file-pdf-o"></i> Export as PDF</button> -->
+            </div>
+            <hr>
+        </div>
+        <div class="invoice overflow-auto">
+            <div style="min-width: 600px">
+                <header>
+                    <div class="row">
+                        <div class="col">
+                            <h2 class="to">COVID-19 Test Certificate</h2>
+                            <!-- <a target="_blank" href="https://lobianijs.com">
+                                <img src="http://lobianijs.com/lobiadmin/version/1.0/ajax/img/logo/lobiadmin-logo-text-64.png" data-holder-rendered="true" />
+                            </a> -->
+                        </div>
+                        <div class="col company-details">
+                            <h2 class="name">
+                                COVID-19 Testing Lab
+                            </h2>
+                            <div>455 Foggy Heights, AZ 85004, US</div>
+                            <div>(123) 456-789</div>
+                            <div>testingagency@example.com</div>
+                        </div>
+                    </div>
+                </header>
+                <main>
+                    <div class="row contacts">
+                        <div class="col invoice-to">
+                            <div class="text-gray-light">TO:</div>
+                            <h2 class="to"><%= results[0].full_name %></h2>
+                            <div class="address"><%= results[0].address %>, <%= results[0].state %></div>
+                            <div class="email"><%= results[0].email %></div>
+                        </div>
+                        <div class="col invoice-details">
+                            <h1 class="invoice-id">STATUS: <%= results[0].status_text %></h1>
+                            <div class="date">Date of Sample: <%= results[0].date %></div>
+                        </div>
+                    </div>
+                    <table border="0" cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th class="text-left">Details</th>
+                                <th class="text-right">Age, Gender</th>
+                                <th class="text-right">Antigent Score</th>
+                                <th class="text-right">Status Code</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="no">01</td>
+                                <td class="text-left"><h3>SARS-COV-2</h3>
+                                <p>UID: <%= results[0].uid %><br>
+                                Specimen Type: <%= results[0].specimen %></p>
+                                </td>
+                                <td class="unit"><%= results[0].age %>, <%= results[0].gender %></td>
+                                <td class="qty"><%= results[0].score %></td>
+                                <td class="unit"><%= results[0].status_code %></td>
+                            </tr>
+                            <!-- <tr>
+                                <td class="no">01</td>
+                                <td class="text-left"><h3>Website Design</h3>Creating a recognizable design solution based on the company's existing visual identity</td>
+                                <td class="unit">$40.00</td>
+                                <td class="qty">30</td>
+                                <td class="total">$1,200.00</td>
+                            </tr>
+                            <tr>
+                                <td class="no">02</td>
+                                <td class="text-left"><h3>Website Development</h3>Developing a Content Management System-based Website</td>
+                                <td class="unit">$40.00</td>
+                                <td class="qty">80</td>
+                                <td class="total">$3,200.00</td>
+                            </tr>
+                            <tr>
+                                <td class="no">03</td>
+                                <td class="text-left"><h3>Search Engines Optimization</h3>Optimize the site for search engines (SEO)</td>
+                                <td class="unit">$40.00</td>
+                                <td class="qty">20</td>
+                                <td class="total">$800.00</td>
+                            </tr> -->
+                        </tbody>
+                        <!-- <tfoot>
+                            <tr>
+                                <td colspan="2"> </td>
+                                <td colspan="2"> </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"> </td>
+                                <td colspan="2"> </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"> </td>
+                                <td colspan="2"> </td>
+                                <td></td>
+                            </tr>
+                        </tfoot> -->
+                    </table>
+                    <div class="text-right">
+                        <img src="<%= src %>" alt="QRcode">
+                        <h5>Verify the report by scanning QR Code</h5>
+                    </div>
+                    <!-- <div class="thanks">Thank you!</div>
+                    <div class="notices">
+                        <div>NOTICE:</div>
+                        <div class="notice">A finance charge of 1.5% will be made on unpaid balances after 30 days.</div>
+                    </div> -->
+                </main>
+                <!-- <footer>
+                    Invoice was created on a computer and is valid without the signature and seal.
+                </footer> -->
+            </div>
+            <!--DO NOT DELETE THIS div. IT is responsible for showing footer always at the bottom-->
+            <div></div>
+        </div>
+    </div>
+    <script src="/public/pdf/js/script.js"></script>
+</body>
+</html>

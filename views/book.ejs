@@ -1,0 +1,137 @@
+<body class="d-flex flex-column h-100" style="background-color: #f5f5f5;">
+    <%- include ("./partials/header") %>
+    <main role="main" class="flex-shrink-0">
+      <div class="container">
+
+        <h1 class="mt-4">Add New User Devices</h1>
+        <p class="lead">Enter the correct details in the following form.</p>
+        <div class="row">
+
+          <div class="col-md-4" style="padding-left: 0%;">
+            <form method="POST" action="/add">
+              <div class="form-label-group">
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  class="form-control"
+                  placeholder="First Name"
+                  autofocus
+                  required
+                />
+                <label for="firstName">First Name</label>
+              </div>
+              <div class="form-label-group">
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  class="form-control"
+                  placeholder="Last Name"
+                  autofocus
+                  required
+                />
+                <label for="LastName">Last Name</label>
+              </div>
+              <div class="form-label-group">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  placeholder="Email"
+                  autofocus
+                  required
+                />
+                <label for="email">Email</label>
+              </div>
+              <div class="form-label-group">
+                <input
+                  type="text"
+                  id="phone"
+                  name="phone"
+                  class="form-control"
+                  placeholder="phone"
+                  autofocus
+                  required
+                />
+                <label for="phone">Phone</label>
+              </div>
+              <div class="form-label-group">
+                <input
+                  type="text"
+                  id="Dis"
+                  name="emergency_name"
+                  class="form-control"
+                  placeholder="emergency_name"
+                  autofocus
+                  required
+                />
+                <label for="emergency_name">Emergency Contact Person</label>
+              </div>
+              <div class="form-label-group">
+                <input
+                  type="text"
+                  id="emergency_no"
+                  name="emergency_no"
+                  class="form-control"
+                  placeholder="emergency_no"
+                  autofocus
+                  required
+                />
+                <label for="emergency_no">Emergency Contact Number</label>
+              </div>
+    
+              <!-- <div class="input-group mb-3">
+                <div class="input-group-append">
+                  <span class="input-group-text" id="">Upload Image</span>
+                </div>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="inputGroupFile02">
+                  <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+                </div>
+              </div> -->
+              
+              <button class="btn btn-primary my-2 my-sm-0" type="submit">Add User</button>
+            </form>
+          </div>
+          <div class="col-md-8">
+            <div id="map"></div>
+          </div>
+        </div>
+
+        <script>
+          function initMap() {
+            var lat = parseFloat('47.54', 10);
+            var lng = parseFloat('74.58', 10);
+            var center = {lat: lat, lng: lng };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 8,
+                center: center,
+                scrollwheel: true
+            });
+            var contentString = 'Hey';
+            var infowindow = new google.maps.InfoWindow({
+              content: contentString
+            });
+            var marker = new google.maps.Marker({
+                position: center,
+                map: map
+            });
+            marker.addListener('click', function() {
+              infowindow.open(map, marker);
+            });
+          }
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbzxNhZojgnJZvkHUZTro5ezS62sQJcT4&callback=initMap"></script>
+      </div>
+    </main>
+  
+  </body>
+  
+  <script>
+    $(document).ready(function(){
+      $('#book').addClass('active');
+      $('#book-a').append('<span class="sr-only">(current)</span>');
+    });
+  </script>

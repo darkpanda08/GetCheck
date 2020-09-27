@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>QR Report</title>
+
+    <style>
+        body{
+            padding-left: 20%;
+            padding-right: 20%;
+        }
+        h4{
+            text-align: center;
+            text-transform: uppercase;
+            padding-top: 70px;
+            padding-bottom: 10px;
+        }
+        h6{
+            padding-top: 5px;
+            text-align: center;
+        }
+        #date{
+            text-align: right;
+        }
+    </style>
+  </head>
+  <body>
+      <div class=container>
+          <div class="container">
+            <h4>Report</h4>
+            <h5>POSITIVE</h5>
+          </div>
+          
+          <table class="table">
+            <tbody>
+              <tr>
+                <td class="text-monospace">Name</td>
+                <td class="text-monospace"><%= result[0].full_name %></td>
+              </tr>
+              <tr>
+                <td class="text-monospace">UID</td>
+                <td class="text-monospace"><%= result[0].uid %></td>
+              </tr>
+              <tr>
+                <td class="text-monospace">Sex</td>
+                <td class="text-monospace"><%= result[0].gender %></td>
+              </tr>
+              <tr>
+                <td class="text-monospace">Age</td>
+                <td class="text-monospace"><%= result[0].age %></td>
+              </tr>
+              <tr>
+                <td class="text-monospace">Specimen Type</td>
+                <td class="text-monospace"><%= result[0].specimen %></td>
+              </tr>
+              <tr>
+                <td class="text-monospace">Antigent Score</td>
+                <td class="text-monospace"><%= result[0].score %></td>
+              </tr>
+            </tbody>
+          </table>
+          <h6 class="font-italic" id="date"><%= result[0].date %></h6>
+      </div>
+      <!-- <div class="container">
+        <h6 class="text-monospace">Name :            Ekta Gupta</h6>
+        <h6 class="text-monospace">UID :             771ekgg32-aeps-6746-b657-89g67g6b78978</h6>
+        <h6 class="text-monospace">Sex :             Female</h6>
+        <h6 class="text-monospace">Age :             22</h6>
+        <h6 class="text-monospace">Specimen Type :   Nasopharyngeal Swab</h6>
+        <h6 class="text-monospace">Antigent Score :  76</h6>
+        <h6 class="text-monospace">Status :          Positive</h6>
+      </div> -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
