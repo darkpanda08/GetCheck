@@ -2,7 +2,6 @@ const express = require('express')
 const router = express.Router()
 const bcrypt = require('bcryptjs')
 const passport = require('passport')
-const nodemailer = require("nodemailer")
 
 // User model
 const User = require('../models/userModel')
@@ -28,51 +27,6 @@ router.get('/register', (req, res) => {
         return res.redirect('/book')
     }
 }) 
-
-
-// OTP Send Mail Function
-function otpMail(toEmail, otp) {
-    const output = `<html>
-        <h3>Verification Email</h3>
-        <p>Thanks for signing up on TestApp</p>
-        <p>Your OTP to verify email is: ${otp}</p>
-        <p>Please login and enter the above OTP to start using the services.</p>
-        <p>Regards</p>
-        <p>Vineet Ranjan<p>
-        <p>TestApp Team</p>
-    </html>`
-
-    // create reusable transporter object using the default SMTP transport
-    let transporter = nodemailer.createTransport({
-        host: 'email-smtp.us-east-1.amazonaws.com',
-        port: 465,
-        secure: true, // true for 465, false for other ports
-        auth: {
-            user: process.env.SES_User,
-            pass: process.env.SES_Pass
-        },
-        tls:{
-        rejectUnauthorized:false
-        }
-    })
-
-    // setup email data with unicode symbols
-    let mailOptions = {
-        from: '"TestApp Account" <verify@darkpanda08.me>', // sender address
-        to: toEmail, // list of receivers
-        subject: 'Verify your Account', // Subject line
-        text: `Your OTP to verify email is: ${otp}`,
-        html: output // html body
-    }
-
-    // send mail with defined transport object
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            return console.log(error)
-        }
-    })
-    console.log("Mail Sent")
-}
 
 // Register Handle
 router.post('/register', (req, res) => {
