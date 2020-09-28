@@ -25,6 +25,32 @@ we came across many challenges such as design for our dashboard and the certific
 ## What I learned
 Doing this projects we learned how to use the Google Cloud Platform and deploy our web applications on App Engine. Many features that we have added in our application such as PDF generation, QR code was new for us and hence we leanrt those in order to integrate in our application.
 
+## Installation
+
+GetCheck requires [Node.js](https://nodejs.org/) v4+ to run.
+
+Run the following command to clone the repository and install the dependencies and devDependencies.
+
+```sh
+$ git clone https://github.com/darkpanda08/GetCheck.git
+$ cd GetCheck
+$ npm install
+```
+
+> Now rename the .env.example file to .env and fill the MongoDB database connection link.
+
+To run in development mode...
+```sh
+$ npm run dev
+```
+To run production mode...
+
+```sh
+$ npm start
+```
+
+> Before runn
+
 ## Team:
 - Vineet Ranjan : https://github.com/darkpanda08
 - Ekta Gupta : https://github.com/eKta37
