@@ -32,7 +32,7 @@ app.use('/public', express.static('public'))
 
 // Express Session
 app.use(session({
-    secret: process.env.Cookie_Secret,
+    secret: 'Heoworldtoourapp',
     resave: true,
     saveUninitialized: true,
     store: new MongoStore({ mongooseConnection: mongoose.connection })
