@@ -89,7 +89,7 @@
           <div class="col-lg-12">
             <div class="card mb-4">
               <div class="table-responsive p-3">
-                <div id="top_x_div" style="width: 900px; height: 500px;"></div>
+                <div id="top_x_div1" style="width: 900px; height: 500px;"></div>
               </div>
             </div>
             <div class="card mb-4">
@@ -149,9 +149,9 @@
 
     <script type="text/javascript">
         google.charts.load('current', {'packages':['bar']});
-        google.charts.setOnLoadCallback(drawStuff);
+        google.charts.setOnLoadCallback(drawStuff1);
 
-        function drawStuff() {
+        function drawStuff1() {
         var data = new google.visualization.arrayToDataTable([
             ['Name', 'Saliva Test'],
             ["Jake", "Positive"],
@@ -162,7 +162,7 @@
         ]);
 
         var options = {
-            title: 'Chess opening moves',
+            title: 'Saliva Test of people conducted',
             width: 900,
             legend: { position: 'none' },
             chart: { title: 'Saliva Test of people conducted',
@@ -176,16 +176,16 @@
             bar: { groupWidth: "90%" }
         };
 
-        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+        var chart = new google.charts.Bar(document.getElementById('top_x_div1'));
         chart.draw(data, options);
         };
     </script>
 
     <script type="text/javascript">
         google.charts.load('current', {'packages':['bar']});
-        google.charts.setOnLoadCallback(drawStuff1);
+        google.charts.setOnLoadCallback(drawStuff2);
 
-        function drawStuff1() {
+        function drawStuff2() {
         var data = new google.visualization.arrayToDataTable([
             ['Name', 'Nasal Test'],
             ["Jake", "Positive"],
@@ -196,7 +196,7 @@
         ]);
 
         var options = {
-            title: 'Chess opening moves',
+            title: 'Nasal Test of people conducted',
             width: 900,
             legend: { position: 'none' },
             chart: { title: 'Nasal Test of people conducted',
@@ -215,14 +215,11 @@
         };
     </script>
 
-      <html>
-  <head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawStuff);
+      google.charts.setOnLoadCallback(drawStuff3);
 
-      function drawStuff() {
+      function drawStuff3() {
         var data = new google.visualization.arrayToDataTable([
           ['Name', 'Antigen Test'],
           ["Jake", "Yes"],
@@ -233,11 +230,11 @@
         ]);
 
         var options = {
-          title: 'Chess opening moves',
+          title: 'Antigen Test of people conducted',
           width: 900,
           legend: { position: 'none' },
           chart: { title: 'Antigen Test of people conducted',
-                   subtitle: 'Yes or no' },
+                  subtitle: 'Yes or no' },
           bars: 'horizontal', // Required for Material Bar Charts.
           axes: {
             x: {
@@ -247,50 +244,16 @@
           bar: { groupWidth: "90%" }
         };
 
-        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+        var chart = new google.charts.Bar(document.getElementById('top_x_div3'));
         chart.draw(data, options);
       };
     </script>
 
     <script type="text/javascript">
         google.charts.load('current', {'packages':['bar']});
-        google.charts.setOnLoadCallback(drawStuff2);
+        google.charts.setOnLoadCallback(drawStuff4);
 
-        function drawStuff2() {
-        var data = new google.visualization.arrayToDataTable([
-            ['Name', 'Antigen Test'],
-            ["Jake", "Yes"],
-            ["Kat", "Yes"],
-            ["Tina", "Yes"],
-            ["Rhea", "Yes"],
-            ['Diya', "No"]
-        ]);
-
-        var options = {
-            title: 'Chess opening moves',
-            width: 900,
-            legend: { position: 'none' },
-            chart: { title: 'Antigen Test of people conducted',
-                    subtitle: 'Yes or no' },
-            bars: 'horizontal', // Required for Material Bar Charts.
-            axes: {
-            x: {
-                0: { side: 'top', label: 'Given'} // Top x-axis.
-            }
-            },
-            bar: { groupWidth: "90%" }
-        };
-
-        var chart = new google.charts.Bar(document.getElementById('top_x_div3'));
-        chart.draw(data, options);
-        };
-    </script>
-
-    <script type="text/javascript">
-        google.charts.load('current', {'packages':['bar']});
-        google.charts.setOnLoadCallback(drawStuff3);
-
-        function drawStuff3() {
+        function drawStuff4() {
         var data = new google.visualization.arrayToDataTable([
             ['Name', 'Antibody Test'],
             ["Jake", "Yes"],
@@ -301,7 +264,7 @@
         ]);
 
         var options = {
-            title: 'Chess opening moves',
+            title: 'Antibody Test of people conducted',
             width: 900,
             legend: { position: 'none' },
             chart: { title: 'Antibody Test of people conducted',
