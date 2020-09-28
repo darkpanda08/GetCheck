@@ -49,8 +49,6 @@ To run production mode...
 $ npm start
 ```
 
-> Before runn
-
 ## Team:
 - Vineet Ranjan : https://github.com/darkpanda08
 - Ekta Gupta : https://github.com/eKta37
