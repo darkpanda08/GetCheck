@@ -6,49 +6,6 @@ const { ensureAuthenticated } = require('../config/auth')
 // Appointment model
 const Appointment = require('../models/appointmentModel')
 
-// Send Mail Function
-function updateMail(toEmail) {
-    const output = `<html>
-        <h3>Hello</h3>
-        <p>Your COVID-19 Test Report status has been updated.</p>
-        <p>Please login to check or follow the below link where uid is your UID.</p>
-        <p>https://getcheck.com/verify/uid</p>
-        <p><br></p>
-        <p>Regards</p>
-        <p>GetCheck</p>
-    </html>`
-
-    // create reusable transporter object using the default SMTP transport
-    let transporter = nodemailer.createTransport({
-        host: 'email-smtp.us-east-1.amazonaws.com',
-        port: 465,
-        secure: true, // true for 465, false for other ports
-        auth: {
-            user: process.env.SES_User,
-            pass: process.env.SES_Pass
-        },
-        tls:{
-        rejectUnauthorized:false
-        }
-    })
-
-    // setup email data with unicode symbols
-    let mailOptions = {
-        from: '"GetCheck" <status@getcheck.tech>', // sender address
-        to: toEmail, // list of receivers
-        subject: 'COVID Test Report Status Updated', // Subject line
-        text: `Your Test Report Status has been updated`,
-        html: output // html body
-    }
-
-    // send mail with defined transport object
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            return console.log(error)
-        }
-    })
-}
-
 // Updating Handle
 router.get("/:uid", ensureAuthenticated, (req, res, next) => {    
     if(req.user.role == 'testing') {
@@ -87,7 +44,6 @@ router.post('/:uid', ensureAuthenticated, (req, res) => {
             }
             else {
                 req.flash('success_msg', 'Update Successful.')
-                updateMail(email);
                 res.redirect('/appointments')
             }    
         })
