@@ -1,5 +1,7 @@
 # GetCheck
 
+Submitted to BorderHacks 2020 and won the prize. https://devpost.com/software/getcheck
+
 ## Problem Statement
 The main challenge while the COVID-19 pandemic is to implement a secure ‘COVID-19 status certificate’ for citizens of Canada and USA who live in a border city. The solution which will outline a diagnostic testing strategy to detect the presence or absence of the COVID19 virus (nasal, saliva) and antibodies (blood), and transfer the results to a secure portal. The secure mechanism is for citizens of both USA/Canada to opt-in to share their COVID-19 test results (COVID-19 status) as a digital verifiable certificate to authorized stakeholders. Certificates could be used for a variety of scenarios: permission to travel to (land border), volunteering, leisure & tourism activities, and health & wellness
 services.
